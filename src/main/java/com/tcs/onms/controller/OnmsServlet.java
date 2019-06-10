@@ -45,7 +45,7 @@ public class OnmsServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		if("List".equals(action)) {
 			ArrayList<Onms> empList=service.getAllUsers();
-			out.println("<h1 align='center'>ONMS WORK TRACKER</h1>");
+			out.println("<h1 align='center'>ONMS_WORK_TRACKER</h1>");
 			out.println("<hr><br>");
 			out.println("<table width='80%' align='center' border='1'>");
 			out.println("<tr><th>Emp Id</th><th>User Name</th><th>TempPwd</th><th>RoleId</th><th>Email Id</th><th>Mobile No</th><th>Team Lead ID</th><th>Last Login</th></tr>");
