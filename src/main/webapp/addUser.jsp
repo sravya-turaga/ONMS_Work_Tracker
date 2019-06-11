@@ -15,10 +15,11 @@
 <title>Add User</title>
 </head>
 <body>
+<h1 style="text-align: center">Add User</h1>
 <center>
-<form  action="OnmsServlet" method="get">
+<form  action="OnmsServlet" method="get" >
 
-<table>
+<table style="text-align: center">
 <tr>
   <th>User Name:</th>
   <td><input type="text" name="username" > <br><br></td>
@@ -43,9 +44,9 @@
   
   </tr>
     <tr>
- 		<th>Role Id:</th>
+ 		<th>Role Name:</th>
    		<td>
-   		<select name="roleid">
+   		<select style="height:50px;font-size:14pt;" value="select" name="roleid">
   <option value="101">Manager</option>
   <option value="102">Team Lead</option>
   <option value="103">Developer</option>
