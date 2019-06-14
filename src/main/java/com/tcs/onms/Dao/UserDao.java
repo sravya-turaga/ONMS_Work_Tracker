@@ -8,20 +8,20 @@ import java.util.ArrayList;
 
 
 
-import com.tcs.onms.bean.Onms;
+import com.tcs.onms.bean.User;
 import com.tcs.onms.util.DbTransactions;
-public class OnmsDao {
+public class UserDao {
 
 
-	public ArrayList<Onms> getAllUsers() {
+	public ArrayList<User> getAllUsers() {
 		
-			ArrayList<Onms> empList=new ArrayList<Onms>();
+			ArrayList<User> empList=new ArrayList<User>();
 			try {
 				Connection cn=DbTransactions.createConnection();
 				PreparedStatement ps=cn.prepareStatement("select * from Users");
 				ResultSet rs=ps.executeQuery();
 				while(rs.next()) {
-					Onms omns=new Onms(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8));
+					User omns=new User(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8));
 					empList.add(omns);
 									}
 				DbTransactions.closeResultSet(rs);
@@ -39,7 +39,7 @@ public class OnmsDao {
 			return empList;
 		
 	}
-	public boolean addUsers(Onms user) {
+	public boolean addUsers(User user) {
 		boolean result=false;
 		try {
 			Connection cn=DbTransactions.createConnection();
@@ -83,16 +83,16 @@ public class OnmsDao {
 		}
 		return result;
 	}
-	public ArrayList<Onms> searchUsers(long eNo) {
+	public ArrayList<User> searchUsers(long eNo) {
 		
-		ArrayList<Onms> empList=new ArrayList<Onms>();
+		ArrayList<User> empList=new ArrayList<User>();
 		try {
 			Connection cn=DbTransactions.createConnection();
 			PreparedStatement ps=cn.prepareStatement("select * from Users where EmpId=?");
 			 ps.setLong(1,eNo);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
-				Onms omns=new Onms(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8));
+				User omns=new User(rs.getLong(1),rs.getString(2),rs.getString(3),rs.getLong(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8));
 				empList.add(omns);
 								}
 			DbTransactions.closeResultSet(rs);
@@ -111,7 +111,7 @@ public class OnmsDao {
 	
 }
 
-	public boolean updateUsers(Onms user) {
+	public boolean updateUsers(User user) {
 		boolean result=false;
 		try {
 			Connection cn=DbTransactions.createConnection();

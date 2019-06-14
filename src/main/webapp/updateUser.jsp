@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1 style="text-align: center">Update User</h1>
-<form action="OnmsServlet" style="text-align: center" method="get">
+<form action="UserServlet" style="text-align: center" method="get">
 Employee Id:<br>
   <input type="number" name="employeeid" >
   <br>

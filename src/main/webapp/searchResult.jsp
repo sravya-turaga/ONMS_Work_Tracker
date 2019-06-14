@@ -21,7 +21,7 @@
 <button onclick="window.location.href='addUser.jsp'">addUser</button>
  <button onclick="window.location.href='updateUser.jsp'">updateUser</button>
  <br><br><br>
-				 <form action="OnmsServlet" method="get">
+				 <form action="UserServlet" method="get">
 				  <input type="text" name="search1" placeholder="search by name" >
 				  <input type="submit" name="action" value="search"  >
 				 </form>
@@ -39,8 +39,8 @@
          <td>Last Login</td>
    </tr>
         <%
-        ArrayList<Onms> empList=(ArrayList<Onms>)request.getAttribute("search1");
-        for(Onms e:empList)
+        ArrayList<User> empList=(ArrayList<User>)request.getAttribute("search1");
+        for(User e:empList)
         {
             %>
            <% 
@@ -53,7 +53,7 @@
 				out.println("<td>"+e.getMobileNumber()+"</td>");
 				out.println("<td>"+e.getTeamLeadName()+"</td>");
 				out.println("<td>"+e.getLastLogin()+"</td>");
-				out.println("<td><a href='OnmsServlet?action=Delete&empNo="+e.getEmployeeId()+"'>Delete</a></td></tr>");
+				out.println("<td><a href='UserServlet?action=Delete&empNo="+e.getEmployeeId()+"'>Delete</a></td></tr>");
 				
 				%>
             <%

@@ -17,7 +17,7 @@
 <body>
 <h1 style="text-align: center">Add User</h1>
 <center>
-<form  action="OnmsServlet" method="get" >
+<form  action="UserServlet" method="get" >
 
 <table style="text-align: center">
 <tr>

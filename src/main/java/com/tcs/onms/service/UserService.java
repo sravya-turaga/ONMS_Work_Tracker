@@ -3,35 +3,35 @@ package com.tcs.onms.service;
 
 import java.util.ArrayList;
 
-import com.tcs.onms.Dao.OnmsDao;
-import com.tcs.onms.bean.Onms;
+import com.tcs.onms.Dao.UserDao;
+import com.tcs.onms.bean.User;
 
-public class OnmsService {
-	public ArrayList<Onms> getAllUsers() 
+public class UserService {
+	public ArrayList<User> getAllUsers() 
 	{
-		OnmsDao dao=new OnmsDao();
+		UserDao dao=new UserDao();
 		return dao.getAllUsers();
 	}
 
-	public boolean addUsers(Onms emp) {
+	public boolean addUsers(User emp) {
 		// TODO Auto-generated method stub
-		OnmsDao dao=new OnmsDao();
+		UserDao dao=new UserDao();
 		return dao.addUsers(emp);
 		
 	}
 	public boolean deleteUsers(long eNo) {
 		// TODO Auto-generated method stub
-		OnmsDao dao=new OnmsDao();
+		UserDao dao=new UserDao();
 		return dao.deleteUsers(eNo);
 	}
-	public ArrayList<Onms> searchUsers(long eNo) {
+	public ArrayList<User> searchUsers(long eNo) {
 		// TODO Auto-generated method stub
-		OnmsDao dao=new OnmsDao();
+		UserDao dao=new UserDao();
 		return dao.searchUsers(eNo);
 	}
-	public boolean updateUsers(Onms emp) {
+	public boolean updateUsers(User emp) {
 		// TODO Auto-generated method stub
-		OnmsDao dao=new OnmsDao();
+		UserDao dao=new UserDao();
 		return dao.updateUsers(emp);
 	}
 	

@@ -26,7 +26,7 @@
 
 
 <div>
- <form  class="searchbar" action="OnmsServlet" method="get">
+ <form  class="searchbar" action="UserServlet" method="get">
 	<input type="text" name="search1" style='margin-right:80px' >
 	<input  class="button" style='margin-right:80px' type="submit" name="action" value="search"  >
 	
@@ -49,11 +49,11 @@
          <td>Last Login</td>
    </tr>
         <%
-        OnmsService service=new OnmsService();
-        ArrayList<Onms> empList=service.getAllUsers();
-        for(Onms e:empList)
-        {
-            %>
+        	UserService service=new UserService();
+                        ArrayList<User> empList=service.getAllUsers();
+                        for(User e:empList)
+                        {
+        %>
            <% 
           
            		out.println("<tr><td>"+e.getEmployeeId()+"</td>");

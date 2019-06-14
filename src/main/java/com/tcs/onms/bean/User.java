@@ -2,7 +2,7 @@ package com.tcs.onms.bean;
 
 import java.sql.Date;
 //Sravya
-public class Onms {
+public class User {
 long employeeId;
 String userName;
 String password;
@@ -55,7 +55,7 @@ public void setMobileNumber(String mobileNumber) {
 public String getPassword() {
 	return password;
 }
-public Onms(long employeeId, String userName, String password, long roleId,
+public User(long employeeId, String userName, String password, long roleId,
 		String emailId, String mobileNumber, String teamLeadName) {
 	super();
 	this.employeeId = employeeId;
@@ -67,7 +67,7 @@ public Onms(long employeeId, String userName, String password, long roleId,
 	this.teamLeadName = teamLeadName;
 	//this.lastLogin=lastLogin;
 }
-public Onms(long employeeId, String userName, String password, long roleId,
+public User(long employeeId, String userName, String password, long roleId,
 		String emailId, String mobileNumber, String teamLeadName,Date lastLogin) {
 	super();
 	this.employeeId = employeeId;
@@ -88,7 +88,7 @@ public long getEmployeeId() {
 public void setEmployeeId(long employeeId) {
 	this.employeeId = employeeId;
 }
-public Onms() {
+public User() {
 	super();
 }
 

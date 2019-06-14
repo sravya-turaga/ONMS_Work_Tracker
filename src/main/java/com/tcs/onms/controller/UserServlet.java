@@ -16,21 +16,21 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-import com.tcs.onms.bean.Onms;
-import com.tcs.onms.service.OnmsService;
+import com.tcs.onms.bean.User;
+import com.tcs.onms.service.UserService;
 
 
 /**
  * Servlet implementation class OnmsServlet
  */
-@WebServlet("/OnmsServlet")
-public class OnmsServlet extends HttpServlet {
+@WebServlet("/UserServlet")
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OnmsServlet() {
+    public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,16 +41,16 @@ public class OnmsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String action=request.getParameter("action");
-		OnmsService service=new OnmsService();
+		UserService service=new UserService();
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		if("List".equals(action)) {
-			ArrayList<Onms> empList=service.getAllUsers();
+			ArrayList<User> empList=service.getAllUsers();
 			out.println("<h1 align='center'>ONMS_WORK_TRACKER</h1>");
 			out.println("<hr><br>");
 			out.println("<table width='80%' align='center' border='1'>");
 			out.println("<tr><th>Emp Id</th><th>User Name</th><th>TempPwd</th><th>RoleId</th><th>Email Id</th><th>Mobile No</th><th>Team Lead ID</th><th>Last Login</th></tr>");
-			for(Onms e:empList) {
+			for(User e:empList) {
 				out.println("<tr><td>"+e.getEmployeeId()+"</td>");
 				out.println("<td>"+e.getUserName()+"</td>");
 				out.println("<td>"+e.getPassword()+"</td>");
@@ -74,7 +74,7 @@ public class OnmsServlet extends HttpServlet {
 			long employeenumber=Long.parseLong(request.getParameter("employeeid"));
 			
 			
-			Onms emp=new Onms(employeenumber,username,password,roleid,emailid,mobilenumber,teamleadname);
+			User emp=new User(employeenumber,username,password,roleid,emailid,mobilenumber,teamleadname);
 			boolean result=service.addUsers(emp);
 			out.println("<h1 align='center'>ONMS WORK TRACKER</h1>");
 			out.println("<hr><br>");
@@ -116,12 +116,12 @@ public class OnmsServlet extends HttpServlet {
 		      request.getRequestDispatcher("searchUser1.jsp").forward(request, response);*/
 
 			
-			ArrayList<Onms> empList=service.searchUsers(eNo);
+			ArrayList<User> empList=service.searchUsers(eNo);
 			out.println("<h1 align='center'>ONMS WORK TRACKER</h1>");
 			out.println("<hr><br>");
 			out.println("<table color='blue' border-collapse='collapse' width='80%' align='center' border='1'>");
 			out.println("<tr><th>Emp Id</th><th>User Name</th><th>TempPwd</th><th>RoleId</th><th>Email Id</th><th>Mobile No</th><th>Team Lead ID</th><th>Last Login</th><th>  </th></tr>");
-			for(Onms e:empList) {
+			for(User e:empList) {
 				out.println("<tr><td>"+e.getEmployeeId()+"</td>");
 				out.println("<td>"+e.getUserName()+"</td>");
 				out.println("<td>"+e.getPassword()+"</td>");
@@ -148,7 +148,7 @@ public class OnmsServlet extends HttpServlet {
 			long employeenumber=Long.parseLong(request.getParameter("employeeid"));
 			
 			
-			Onms emp=new Onms(employeenumber,username,password,rolename,emailid,mobilenumber,teamleadname);
+			User emp=new User(employeenumber,username,password,rolename,emailid,mobilenumber,teamleadname);
 			boolean result=service.updateUsers(emp);
 			out.println("<h1 align='center'>ONMS WORK TRACKER</h1>");
 			out.println("<hr><br>");
